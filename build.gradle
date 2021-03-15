@@ -1,4 +1,6 @@
 plugins {
+    id 'org.springframework.boot' version '2.4.3'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
 
@@ -12,6 +14,29 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+
+    // https://mvnrepository.com/artifact/com.github.cloudyrock.mongock/mongock-bom
+    implementation group: 'com.github.cloudyrock.mongock', name: 'mongock-bom', version: '4.3.7', ext: 'pom'
+
+    // https://mvnrepository.com/artifact/com.github.cloudyrock.mongock/mongock-spring-v5
+    implementation group: 'com.github.cloudyrock.mongock', name: 'mongock-spring-v5', version: '4.3.7'
+
+
+    // https://mvnrepository.com/artifact/com.github.cloudyrock.mongock/mongodb-springdata-v3-driver
+    implementation group: 'com.github.cloudyrock.mongock', name: 'mongodb-springdata-v3-driver', version: '4.3.7'
+
+    implementation group: 'org.mongodb', name: 'mongodb-driver-sync', version: '4.2.2'
+    implementation group: 'org.springframework.data', name: 'spring-data-mongodb', version: '3.1.5'
+
 }
 
 test {
